@@ -2,9 +2,9 @@
     box-sizing: border-box;
     margin: 0;  
     padding: 0;
-    font-size: 62.5%;
 }
 body{
+    font-size: 62.5%;
     background-color: rgb(40, 40, 40);
 }
 /* Container geral do Header */
@@ -26,35 +26,55 @@ body{
 }
 .navigator{
     display: flex;
+    align-items: center;
     flex-direction: column;
     width: 100vw;
     height: fit-content;
     /* background-color: blue; */
     color: white;
-    font-size: 10rem;
+    font-size: 1.6rem;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     /* margin-top: 1.6rem; */
 }
+.navigator ul li{
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  border-bottom: 1px solid grey;
+  margin-bottom: 8px;
+  width: 100vw;
+  text-align: center;
+}
+a{
+  text-decoration: none;
+}
 /* Logo no header */
 .logo{
-    width: 12rem;
-    margin: 1.6rem;
-}
-/* Lista do header */
-.headerContainer ul{
-    
+    width: 8rem;
+    margin: 3.2rem;
 }
 .openMenu{
     display: none;
     visibility: hidden;
 }
 
+/* Header contact-button */
+.contactButton{
+  width: 12rem;
+  height: 2.6rem;
+  font-size: 1rem;
+  border: none;  
+  border-radius: 4px 4px 4px 4px;
+  background-color: rgb(44, 44, 255);
+  color: white
+}
+
 /* Hamburguer menu MOBILE */
 .nav-icon-5{
     width: 35px;
     height: 30px;
-    margin: 3.2rem 3.2rem;
+    margin: 1.6rem 1.6rem;
     position: relative;
     cursor: pointer;
     display: inline-block;
@@ -108,7 +128,7 @@ body{
         display: none;
     }
     .headerContainer{
-        height: 7rem;
+        height: 4.2rem;
         flex-direction: row;
         border-bottom: 1px solid #80808080;
         /* background-color: red; */
@@ -121,15 +141,42 @@ body{
         display: flex;
     }
     .navigator{
-        display: flex;
-        background-color: black;
-        flex-direction: row;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      /* background-color: black; */
+      width: 250rem;
+      height: fit-content;
+      font-size: 0.8rem;
     }
+    
     .navigator ul{
-        display: flex;
-        margin-left: 16px;
+      display: flex;
+      justify-content: center;
+      /* background-color: blue; */
+      width: 100%;
+    }
+    .navigator ul  li{
+      list-style: none;
+      text-decoration: none;
+      color: white;
+      margin-left: 5rem;
+      font-weight: 500;
+
+      border-bottom: none;
+      margin-bottom: -8px;
+      width: 100%;
     }
     .logo{
         position: relative;
+    }
+    .contactButton{
+      right: 0;
+      margin-right: 3.2rem;
+
+      width: 12rem;
+      height: 2.2rem;
+      font-size: 0.9rem;
+      border-radius: 8px 8px 8px 9px;
     }
 }
