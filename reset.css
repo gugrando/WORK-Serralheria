@@ -1,0 +1,23 @@
+/* Reset CSS */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 62.5% !important;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
+ul, ol {
+  list-style: none;
+}
+button{
+  border: none;
+}

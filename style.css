@@ -1,75 +1,84 @@
-*{
-    box-sizing: border-box;
-    margin: 0;  
-    padding: 0;
-}
 body{
-    font-size: 62.5%;
-    background-color: rgb(40, 40, 40);
+  background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
-/* Container geral do Header */
 .headerContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: fit-content;
-    /* background-color: red; */
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  flex-direction: column;
+  z-index: 3;
 }
 .headerMobile{
-    display: flex;
-    width: 100vw;
-    height: fit-content;
-    align-items: center;
-    border-bottom: 1px solid #80808080;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  width: 100vw;
+  border-bottom: 1px solid #80808050;
 }
 .navigator{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100vw;
-    height: fit-content;
-    /* background-color: blue; */
+    background-color: #80808079;
     color: white;
-    font-size: 1.6rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    /* margin-top: 1.6rem; */
+    font-size: 2.2rem;
 }
 .navigator ul li{
-  text-decoration: none;
-  list-style: none;
-  color: white;
-  border-bottom: 1px solid grey;
-  margin-bottom: 8px;
+  border-bottom: 1px solid #80808079;
+  border-top: 1px solid #80808079;
+  padding: .6rem;
   width: 100vw;
   text-align: center;
+  transition: ease 300ms;
+  cursor: pointer;
 }
-a{
-  text-decoration: none;
+.navigator ul li:hover{
+  color: #0066ff;
+  transition: ease-out 300ms;
 }
-/* Logo no header */
 .logo{
-    width: 8rem;
-    margin: 3.2rem;
+    width: 14rem;
+    position: relative;
+    cursor: pointer;
 }
 .openMenu{
     display: none;
     visibility: hidden;
 }
-
-/* Header contact-button */
 .contactButton{
-  width: 12rem;
-  height: 2.6rem;
-  font-size: 1rem;
-  border: none;  
-  border-radius: 4px 4px 4px 4px;
-  background-color: rgb(44, 44, 255);
-  color: white
+  width: 100vw;
+  height: 5rem;
+  background-color: #0749ff;
+  font-weight: 450;
+  transition: ease 400ms ;
 }
-
+.contactButton:hover{
+  transition: ease 400ms ;
+  background-color: rgb(0, 81, 255);
+  cursor: pointer;
+  border: 2px solid white;
+}
+.wappBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6.5rem;
+  height: 6.5rem;
+  border-radius: 50%;
+  background-color: green;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  cursor: pointer;
+  transition: ease 300ms;
+}
+.wappBox:hover{
+  transition: ease 300ms;
+  background-color: rgb(5, 209, 5);
+}
+.wapp{
+  width: 3.2rem;
+}
 /* Hamburguer menu MOBILE */
 .nav-icon-5{
     width: 35px;
@@ -123,60 +132,104 @@ a{
   }
 
 @media (min-width: 1024px) {
-    /* Menu MOBILE OFF */
-    .nav-icon-5{
-        display: none;
+  .nav-icon-5{
+    display: none;
+  }
+  .headerContainer{
+    position: fixed;
+    top: 0;
+    margin-top: 25px;
+    height: 4rem;
+    flex-direction: row;
+  }
+  .scrolled{
+    animation: scroll 800ms forwards ease-out;
+  }
+  .unscroll{
+    animation: unscroll 300ms forwards;
+  }
+    .scrolled .contactButton{
+      background-color: blue;
     }
-    .headerContainer{
-        height: 4.2rem;
-        flex-direction: row;
-        border-bottom: 1px solid #80808080;
-        /* background-color: red; */
+    .scrolled .contactButton:hover{
+      background-color: rgb(66, 66, 66);
+    }
+
+    @keyframes scroll {
+      20%{
+        margin-top: -1px;
+      }
+      50%{
+        background-color: rgba(0, 0, 0, 0.31);
+        margin-top: -2px;
+      }
+      100%{
+        background-color: rgb(0, 0, 0);
+        margin-top: -2px;  
+        transition: ease;
+      }
+    }
+    @keyframes unscroll {
+      0%{
+        background-color: black;
+        margin-top: -2px;
+      }
+      100%{
+        /* background-color: rgba(0, 0, 0, 0); */
+        margin-top: 25px;  
+      }
     }
     .headerMobile{
+        flex-direction: row;
+        justify-content: flex-start;
         border: none;
     }
     .openMenu{
         visibility: visible;
-        display: flex;
     }
     .navigator{
       display: flex;
+      justify-content: space-between;
       flex-direction: row;
       align-items: center;
-      /* background-color: black; */
-      width: 250rem;
+      width: 90rem;
       height: fit-content;
-      font-size: 0.8rem;
+      font-size: 1.6rem;
+      margin-right: 8.2rem;
     }
-    
     .navigator ul{
       display: flex;
-      justify-content: center;
-      /* background-color: blue; */
-      width: 100%;
+      width: fit-content;
+      margin-right: 0.16rem;
     }
     .navigator ul  li{
       list-style: none;
+      border: none;
       text-decoration: none;
-      color: white;
-      margin-left: 5rem;
       font-weight: 500;
+      padding: 0rem;
 
+      margin-left: 2.1rem;
       border-bottom: none;
       margin-bottom: -8px;
-      width: 100%;
+      width: fit-content;
+      /* background-color: red; */
     }
     .logo{
+      width: 8rem;
+      margin-left: 82px;
         position: relative;
     }
     .contactButton{
+      /* position: relative; */
       right: 0;
-      margin-right: 3.2rem;
+      /* margin-right: 3.2rem; */
+      margin-top: 0;
 
       width: 12rem;
       height: 2.2rem;
-      font-size: 0.9rem;
-      border-radius: 8px 8px 8px 9px;
+      font-size: 1.6rem;
+      border-radius: 8px 8px 8px 8px;
+      /* visibility: hidden; */
     }
 }
