@@ -26,7 +26,31 @@ var splide = new Splide( '.splide', {
     },
     900: {
       gap:'10rem',
+    },
+    800: {
+      gap:'15rem',
+    },
+    660: {
+      gap:'20rem',
+      padding: '2.6rem'
+    },
+    575: {
+      gap:'22.5rem',
     }
   },
 });
 splide.mount();
+
+const mobileButton = document.querySelector('.h-mobile-menu')
+const navMobile = document.querySelector('.h-nav-mobile')
+const body = document.querySelector('body')
+
+//Função que deverei usar sempre que um click deve deixar o body sem scroll
+function noneOverflow(){
+  body.classList.toggle('noneOverflow')
+}
+
+mobileButton.addEventListener('click', ()=>{
+  navMobile.classList.toggle('open')
+  noneOverflow()
+})
