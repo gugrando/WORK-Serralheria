@@ -1,28 +1,32 @@
-//HAMBURGER ICON
-const icons = document.querySelectorAll('.icon');
-icons.forEach (icon => {  
-  icon.addEventListener('click', (event) => {
-    icon.classList.toggle("open");
-  });
+var splide = new Splide( '.splide', {
+  perPage: 3,
+  // perMove: 1,
+  rewind : true,
+  focus: '0',
+  arrows: '',
+  type: 'loop',
+  // width:'100vw',
+  // height:'100%',
+  // gap: '15rem',
+  padding: '4rem',
+  // autoplay: true,
+  interval: number = 5000,
+  pauseOnHover: boolean = true,
+  pauseOnFocus: boolean = true,
+  slideFocus: true,
+  pagination: 'splide__pagination slide-bg', // container
+	page: 'splide__pagination__page slide-bg-bt', // each button
+  breakpoints: {
+		1380: {
+      gap:'15rem',
+    },
+    1100: {
+      perPage:'2' ,
+      gap:'4rem',
+    },
+    900: {
+      gap:'10rem',
+    }
+  },
 });
-
-
-// MENU LIST ON CLICK
-const menuToggle = document.querySelector('.navigator')
-const buttonClick = document.querySelector('.nav-icon-5')
-buttonClick.addEventListener('click', ()=>{
-    menuToggle.classList.toggle('openMenu')
-})
-
-// HEADER BACKGROUND CHANGE ON SCROLL
-document.addEventListener('scroll', ()=>{
-  const header = document.querySelector("header")
-  if(window.scrollY > 100){
-    header.classList.add('scrolled')
-    header.classList.remove('unscroll')
-  }else{
-    header.classList.remove('scrolled')
-    header.classList.add('unscroll')
-  }
-})
-
+splide.mount();
